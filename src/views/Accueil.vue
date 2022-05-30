@@ -1,10 +1,9 @@
+<template>
+  <main>
+    <h1 class="text-2xl">Accueil</h1>
+  </main>
+</template>
+
 <script>
-export default {
-  name: "Accueil",
-};
+export default {};
 </script>
-
-<template></template>
-
-<style >
-</style>
