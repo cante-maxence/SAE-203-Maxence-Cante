@@ -72,7 +72,7 @@ textarea:hover::-webkit-input-placeholder {
 
 input:hover:focus::-webkit-input-placeholder,
 textarea:hover:focus::-webkit-input-placeholder {
-  color: #cbc6c1;
+  color: #000000;
 }
 
 input:hover::-moz-placeholder,
@@ -83,7 +83,7 @@ textarea:hover::-moz-placeholder {
 
 input:hover:focus::-moz-placeholder,
 textarea:hover:focus::-moz-placeholder {
-  color: #cbc6c1;
+  color: #000000;
 }
 
 input:hover::placeholder,
@@ -94,7 +94,7 @@ textarea:hover::placeholder {
 
 input:hover:focus::placeholder,
 textarea:hover:focus::placeholder {
-  color: #cbc6c1;
+  color: #000000;
 }
 
 input:hover::placeholder,
@@ -105,7 +105,7 @@ textarea:hover::placeholder {
 
 input:hover:focus::-ms-placeholder,
 textarea:hover::focus:-ms-placeholder {
-  color: #cbc6c1;
+  color: #000000;
 }
 
 body {

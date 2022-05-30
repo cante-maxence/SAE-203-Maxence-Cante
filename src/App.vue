@@ -17,22 +17,30 @@
       <RouterLink to="/" class="text-black hover:text-slate-700">Accueil </RouterLink>
       <RouterLink to="/Artistes" class="text-black hover:text-slate-700">Artistes </RouterLink>
       <RouterLink to="/prog" class="text-black hover:text-slate-700">Programmation </RouterLink>
+      <RouterLink to="/fest" class="text-black hover:text-slate-700">Festival </RouterLink>
       <RouterLink to="/contact" class="text-black hover:text-slate-700">Contact </RouterLink>
       <RouterLink to="/concert" class="text-black hover:text-slate-700">Concert </RouterLink>
+      <RouterLink to="/MLegal" class="text-black hover:text-slate-700">Mentions légales </RouterLink>
     </nav>
     <RouterView />
 
     <footer class="inset-x-0 bottom-0 grid justify-center bg-purple-900">
       <div class="m-10 flex text-center">
-        <p class="mx-6 flex justify-center text-xl text-pink-300">
-          Nous <br />
-          contactez
-        </p>
+        <RouterLink to="/contact" class="text-black hover:text-slate-700">
+          <p class="mx-6 flex justify-center text-xl text-pink-300">
+            Nous <br />
+            contactez
+          </p>
+        </RouterLink>
+
         <icon-logo />
-        <p class="mx-4 flex justify-center text-xl text-pink-300">
-          Mentions <br />
-          Légales
-        </p>
+
+        <RouterLink to="/MLegal" class="text-black hover:text-slate-700">
+          <p class="mx-4 flex justify-center text-xl text-pink-300">
+            Mentions <br />
+            Légales
+          </p></RouterLink
+        >
       </div>
       <div class="mb-10 flex justify-center">
         <button>
