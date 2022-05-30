@@ -12,10 +12,10 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'Accueil', component: AccueilView },
     { path: '/prog', name: 'prog', component: prog },
-    { path: '/Artistes', name: 'Artistes', component: Artistes },
+    { path: '/artistes', name: 'Artistes', component: Artistes },
     { path: '/fest', name: 'fest', component: fest },
     { path: '/contact', name: 'contact', component: contact },
-    { path: '/Concert', name: 'Concert', component: Concert },
+    { path: '/concert', name: 'Concert', component: Concert },
     { path: '/MLegal', name: 'MLegal', component: MLegal },
   ]
 })

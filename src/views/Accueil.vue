@@ -1,9 +1,12 @@
 <template>
-  <main>
-    <h1 class="text-2xl">Accueil</h1>
-  </main>
+  <div class="text-white">
+    <cardExtract name="Nom" date="Vendredi" />
+  </div>
 </template>
 
 <script>
-export default {};
+import CardExtract from "../components/cardExtract.vue";
+export default {
+  components: { CardExtract },
+};
 </script>

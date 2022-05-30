@@ -1,5 +1,5 @@
 <template>
-  <p class="my-8 text-white">
+  <p class="my-8 text-white mx-10">
 
 <h1 class="text-4xl my-10 flex justify-center"> Mentions légales </h1>
 
@@ -33,7 +33,7 @@
     cadre de sa réalisation et de son suivi:
     <br />
 
-    Propriétaire : StaeOfMind – 19 33000 Bordeaux Responsable publication : Cante Maxence – Maxence.Cante@edu.univ-fcomte.fr Le responsable
+    Propriétaire : Foresight – 19 33000 Bordeaux Responsable publication : Cante Maxence – Maxence.Cante@edu.univ-fcomte.fr Le responsable
     publication est une personne physique ou une personne morale. Webmaster : Cante Maxence – Maxence.Cante@edu.univ-fcomte.fr Hébergeur :
     Infomaniak – Genève 1201 Genève 0782502047 Délégué à la protection des données : Cante Maxence – Maxence.Cante@edu.univ-fcomte.fr Les
     mentions légales sont issues du modèle proposé par le générateur de mentions légales RGPD d'Orson.io
@@ -118,7 +118,7 @@
 
     <br /><br />
     7.1 Responsables de la collecte des données personnelles Pour les Données Personnelles collectées dans le cadre de la création du compte
-    personnel de l’Utilisateur et de sa navigation sur le Site, le responsable du traitement des Données Personnelles est : StaeOfMind.
+    personnel de l’Utilisateur et de sa navigation sur le Site, le responsable du traitement des Données Personnelles est : Foresight.
     https://www.Foresight.comest représenté par Cante Maxence, son représentant légal
 
     <br /><br />
@@ -159,7 +159,7 @@
     s’oppose à leur traitement, l’Utilisateur peut contacter https://www.Foresight.com par écrit à l’adresse suivante :
 
     <br /><br />
-    StaeOfMind – DPO, Cante Maxence 19 33000 Bordeaux. Dans ce cas, l’Utilisateur doit indiquer les Données Personnelles qu’il souhaiterait
+    Foresight – DPO, Cante Maxence 19 33000 Bordeaux. Dans ce cas, l’Utilisateur doit indiquer les Données Personnelles qu’il souhaiterait
     que https://www.Foresight.com corrige, mette à jour ou supprime, en s’identifiant précisément avec une copie d’une pièce d’identité
     (carte d’identité ou passeport).
 
