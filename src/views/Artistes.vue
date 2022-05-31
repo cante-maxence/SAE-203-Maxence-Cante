@@ -27,16 +27,30 @@
   />
 
   <cardArtistes
-    name="Courtney Love"
-    photo1="../images/icons/beckArtistes.png"
-    photo2="../images/icons/beck.png"
+    name="Three Days Grace"
+    photo1="../images/icons/threedays.png"
+    photo2="../images/icons/troisdays.jpg"
     type1="Rock Indépendant"
     type2="Solo"
-    type3="90's"
-    music1="Lo"
-    music2="Wow"
-    music3="Saw Lightning"
+    type3="Femme"
+    music1="You Know my Name "
+    music2="Doll Parts "
+    music3="Violet"
   />
+
+  <cardArtistes
+    name="Courtney Love"
+    photo1="../images/icons/cortneyArtistes.png"
+    photo2="./images/icons/courtneylove.jpg"
+    type1="Rock Indépendant"
+    type2="Solo"
+    type3="Femme"
+    music1="You Know my Name "
+    music2="Doll Parts "
+    music3="Violet"
+  />
+
+  <button class="m-20 rounded bg-red-700 px-3 py-2 text-white outline-none">Afficher plus</button>
 </template>
 
 
