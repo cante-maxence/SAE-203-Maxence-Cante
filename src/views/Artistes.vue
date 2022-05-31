@@ -4,8 +4,8 @@
 
   <cardArtistes
     name="ACDC"
-    photo1="src\components\icons\ACDCartistes.png"
-    photo2="src\components\icons\acdc.png"
+    photo1="..\components\icons\ACDCartistes.png"
+    photo2="..\components\icons\acdc.png"
     type1="Métal"
     type2="Connu"
     type3="80's"
@@ -16,8 +16,8 @@
 
   <cardArtistes
     name="BECK"
-    photo1="src\components\icons\beckArtistes.png"
-    photo2="src\components\icons\beck.png"
+    photo1="..\components\icons\beckArtistes.png"
+    photo2="..\components\icons\beck.png"
     type1="Rock Indépendant"
     type2="Solo"
     type3="90's"
@@ -28,8 +28,8 @@
 
   <cardArtistes
     name="Courtney Love"
-    photo1="src\components\icons\beckArtistes.png"
-    photo2="src\components\icons\beck.png"
+    photo1="..\components\icons\beckArtistes.png"
+    photo2="..\components\icons\beck.png"
     type1="Rock Indépendant"
     type2="Solo"
     type3="90's"

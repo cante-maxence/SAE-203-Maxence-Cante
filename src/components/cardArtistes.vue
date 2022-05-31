@@ -18,7 +18,7 @@
               <div class="flex-1 pt-2">
                 <div class="relative h-full w-full">
                   <img
-                    src="src/components/icons/plus.png"
+                    src="../components/icons/plus.png"
                     class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-bottom"
                   />
                 </div>
