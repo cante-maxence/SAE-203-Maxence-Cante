@@ -1,27 +1,24 @@
   <template>
-  <div class="container mx-auto px-20">
+  <div class="container mx-auto my-10 px-20">
     <div class="relative rounded-lg border bg-cyan-900 bg-opacity-25 p-6 text-gray-100" style="cursor: auto">
       <div class="flex flex-wrap items-center">
         <div class="relative flex h-48 w-full md:h-64 lg:h-72">
           <div class="relative w-8/12 pr-4">
-            <img src="src/components/icons/ACDCartistes.png" class="h-full w-full rounded-lg bg-white object-cover object-top" />
+            <img :src="photo1" class="h-full w-full rounded-lg bg-white object-cover object-top" />
           </div>
 
           <div class="h-full w-4/12">
             <div class="flex h-full w-full flex-col">
               <div class="flex-1 pb-2">
                 <div class="relative h-full w-full">
-                  <img
-                    src="src/components/icons/acdc.png"
-                    class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-center"
-                  />
+                  <img :src="photo2" class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-center" />
                 </div>
               </div>
 
               <div class="flex-1 pt-2">
                 <div class="relative h-full w-full">
                   <img
-                    src="https://stackdiary.com/140x100.png"
+                    src="src/components/icons/plus.png"
                     class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-bottom"
                   />
                 </div>
@@ -32,26 +29,22 @@
 
         <div class="flex w-full flex-col justify-between pt-8">
           <div>
-            <h2 class="text-xl font-bold">ACDC</h2>
+            <h2 class="text-xl font-bold">{{ name }}</h2>
 
             <div class="mb-2 flex flex-wrap pt-4 text-center">
-              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">Thunderstuck</div>
+              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">{{ music1 }}</div>
 
-              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">Back in Black</div>
+              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">{{ music2 }}</div>
 
-              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">Highway to hell</div>
+              <div class="mr-2 mb-2 rounded-full bg-red-400 px-3 py-1 text-xs text-black">{{ music3 }}</div>
             </div>
 
-            <p class="text-xs leading-relaxed text-gray-50">
-              This revolutionary email design kit is going to transform the way in which you send modern emails.
-            </p>
-
             <ul class="mt-4 list-inside list-disc text-xs leading-relaxed text-gray-50">
-              <li>Responsive</li>
+              <li>{{ type1 }}</li>
 
-              <li>Mobile-friendly</li>
+              <li>{{ type2 }}</li>
 
-              <li>Media queries</li>
+              <li>{{ type3 }}</li>
             </ul>
           </div>
 
@@ -83,7 +76,7 @@
                 block
                 w-full
                 rounded-lg
-                bg-teal-800
+                bg-red-800
                 px-4
                 py-3
                 text-center text-sm
@@ -111,7 +104,7 @@ export default {
     music3: String,
     photo1: String,
     photo2: String,
-    photo3: String,
+
     type1: String,
     type2: String,
     type3: String,
