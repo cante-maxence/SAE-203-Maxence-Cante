@@ -1,7 +1,7 @@
 <template>
-  <p class="my-8 text-white mx-10">
+  <p class="my-8 text-white mx-10 font-bree-serif">
 
-<h1 class="text-4xl my-10 flex justify-center"> Mentions légales </h1>
+<h1 class="text-4xl my-10 flex justify-center font-bree-serif"> Mentions légales </h1>
 
     Définitions
     <br />

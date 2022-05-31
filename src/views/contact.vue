@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black">
-    <h1 class="flex justify-center pt-6 text-center text-4xl text-neutral-100">
+    <h1 class="flex justify-center pt-6 text-center font-bree-serif text-4xl text-neutral-100">
       Un retour a nous faire parvenir <br />
       n’hésitez pas
     </h1>
