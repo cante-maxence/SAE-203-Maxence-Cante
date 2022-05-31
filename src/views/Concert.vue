@@ -5,7 +5,7 @@
   <h2 class="my-4 flex justify-center font-bree-serif text-4xl text-white">Samedi de 15h à 2h00</h2>
   <h2 class="mb-25 my-4 flex justify-center font-bree-serif text-4xl text-white">Dimanche de 16h à 5h00</h2>
 
-  <img class="m-auto flex p-16 text-center" src="./images/icons/clock.png" alt="Photo d'une horloge" />
+  <img class="m-auto flex p-16 text-center" src="/images/icons/clock.png" alt="Photo d'une horloge" />
 </template>
 
 <script>
