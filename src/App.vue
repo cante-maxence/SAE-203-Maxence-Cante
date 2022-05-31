@@ -363,10 +363,10 @@
 
 
 <script>
-import IconLogo from "./components/icons/IconLogo.vue";
+import IconLogo from "../component/icons/IconLogo.vue";
 import { MenuIcon } from "@heroicons/vue/outline";
-import cardExtract from "./components/cardExtract.vue";
-import LogoPetit from "./components/icons/LogoPetit.svg";
+import cardExtract from "../images/cardExtract.vue";
+import LogoPetit from "../images/icons/LogoPetit.svg";
 
 export default {
   components: { IconLogo, MenuIcon, cardExtract },
