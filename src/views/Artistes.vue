@@ -33,7 +33,7 @@
     type1="Rock Indépendant"
     type2="Solo"
     type3="90's"
-    music1="Loser"
+    music1="Lo"
     music2="Wow"
     music3="Saw Lightning"
   />
