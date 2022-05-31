@@ -1,6 +1,9 @@
 <template>
   <div class="bg-black">
-    <h1 class="flex justify-center pt-6 text-4xl text-neutral-100">Formulaire de contact</h1>
+    <h1 class="flex justify-center pt-6 text-center text-4xl text-neutral-100">
+      Un retour a nous faire parvenir <br />
+      n’hésitez pas
+    </h1>
 
     <form id="form" class="topBefore pb-10">
       <input id="name" type="text" placeholder="Pseudo" />
@@ -16,7 +19,7 @@
 export default {};
 </script>
 <style scoped>
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -109,7 +112,7 @@ textarea:hover::focus:-ms-placeholder {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Bree Serif, sans-serif";
   background: #ffe1fa;
   color: #ffe1fa;
 }
@@ -129,7 +132,7 @@ header {
 }
 
 input {
-  font-family: "Lato", sans-serif;
+  font-family: "Bree Serif", sans-serif;
   font-size: 0.875em;
   width: 470px;
   height: 50px;
@@ -164,7 +167,7 @@ textarea {
   outline: none;
 
   color: #ffe1fa;
-  font-family: "Lato", sans-serif;
+  font-family: "Bree Serif", sans-serif;
 
   border: solid 4px #ffe1fa;
 
@@ -185,7 +188,7 @@ textarea:hover {
   padding: 0;
   margin: -5px 0px 0px 0px;
 
-  font-family: "Lato", sans-serif;
+  font-family: "Bree Serif", sans-serif;
   font-size: 0.875em;
   color: #ffe1fa;
 

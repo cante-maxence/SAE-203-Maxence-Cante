@@ -1,6 +1,11 @@
 <template>
-  <div class="text-white">
-    <cardExtract name="Nom" date="Vendredi" />
+  <div class="grid grid-cols-3 text-white">
+    <cardExtract name="Artic Monkeys" date="Vendredi" photo="src\components\icons\artic.png" />
+    <cardExtract name="The OffSpring" date="Vendredi" photo="src\components\icons\offSpring.png" />
+    <cardExtract name="ACDC" date="Samedi" photo="src\components\icons\acdc.png" />
+    <cardExtract name="Three Days Grace" date="Samedi" photo="src\components\icons\threedays.png" />
+    <cardExtract name="Fallout Boy" date="Dimanche" photo="src\components\icons\fall.png" />
+    <cardExtract name="Courtney Cox" date="Dimanche" photo="src\components\icons\courtney.png" />
   </div>
 
   <button class="m-auto mb-16 flex rounded-lg bg-white">
@@ -54,3 +59,4 @@ export default {
   components: { CardExtract },
 };
 </script>
+
