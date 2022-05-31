@@ -7,11 +7,13 @@ module.exports = {
   theme: {
     extend: {
       "colors": {
-        // Ici vos couleurs exportées de Figma
+        "violet": "#390042",
+        "rose": "#ffe1fa",
+        "violet clair": "#5c006a"
       },
       "fontFamily": {
-        // Ici vos familles de polices exportées de Figma
-        // Ne pas oublier de les charger dans '/index.html' !
+        "bree-serif": "Bree Serif",
+        "rubik": "Rubik"
       },
     },
 

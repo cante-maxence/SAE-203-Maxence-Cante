@@ -1,6 +1,6 @@
 
   <template>
-  <p class="text-3xl">Bienvenue sur la page artistes !</p>
+  <p class="font-bree-serif text-3xl text-white">Bienvenue sur la page artistes !</p>
 </template>
 
 
