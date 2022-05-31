@@ -339,8 +339,8 @@
 
         <button class="mx-5 flex">
           <svg
-            width="52"
-            height="75"
+            width="75"
+            height="80"
             viewBox="0 0 52 75"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -364,11 +364,10 @@
 
 <script>
 import IconLogo from "./components/icons/IconLogo.vue";
-import { MenuIcon } from "@heroicons/vue/outline";
 import cardExtract from "./components/cardExtract.vue";
 
 export default {
-  components: { IconLogo, MenuIcon, cardExtract },
+  components: { IconLogo, cardExtract },
 };
 </script>
 
