@@ -54,7 +54,11 @@
           fill="#111827"
         ></path>
       </svg>
-      <p class="h-[57px] w-[233px] flex-shrink-0 flex-grow-0 text-center text-xl text-black">Réservez vos Tickets</p>
+      <RouterLink to="/contact" class="text-black hover:text-slate-700">
+        <p class="mx-6 flex justify-center font-bree-serif text-xl text-pink-300"></p>
+
+        <p class="h-[57px] w-[233px] flex-shrink-0 flex-grow-0 text-center text-xl text-black">Réservez vos Tickets</p>
+      </RouterLink>
     </div>
   </button>
 </template>
