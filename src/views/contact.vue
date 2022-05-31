@@ -13,11 +13,99 @@
       <input id="submit" type="submit" value="GO!" />
     </form>
   </div>
+
+  <h1 class="flex justify-center pt-6 text-center font-bree-serif text-4xl text-neutral-100">TEST Firebase Page 300</h1>
+
+  <h5>Firebase - Se connecter</h5>
+  <form @submit.prevent="onCnx()">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-dark">Email :</button>
+      </div>
+      <input class="form-control" type="text" v-model="user.email" required />
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-dark">Mot de passe :</button>
+      </div>
+      <input class="form-control" type="password" v-model="user.password" required />
+    </div>
+    <div class="alert alert-warning mb-3 text-center" v-if="message != null">
+      {{ message }}
+    </div>
+    <div>
+      <button class="float-left" @click="onDcnx()">Deconnexion</button>
+      <button variant="dark" class="float-right" type="submit">Connexion</button>
+    </div>
+  </form>
 </template>
 
 <script>
-export default {};
+
+// Bibliothèques Firebase  : import des fonctions
+//  signInWithEmailAndPassword : Authentification avec email et mot de passe
+//  getAuth : Fonction générale d'authentification
+//  signOut : Se deconnecter
+//  onAuthStateChanged : connaitre le statut de l'utilisateur (connecté ou non)
+
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js'
+
+// Bibliothèque Firestore : import des fonctions
+
+
+    export default {   
+        data(){ // Données de la vue
+            return{                
+                user:{          // user se connectant
+                    email:null,
+                    password:null
+                },
+                message:null, // Message de connexion
+                 }
+        },
+
+        mounted(){ 
+          
+        }
+
+        methods:{
+            onCnx(){                
+                // Se connecter avec user et mot de passe           
+                signInWithEmailAndPassword(getAuth(), this.user.email, this.user.password)
+                .then((response)=>{
+                    // Connexion OK
+                    console.log('user connecté', response.user);
+                    this.user = response.user;
+                    this.message = "User connecté : "+this.user.email;
+                })
+                .catch((error) =>{
+                    // Erreur de connexion
+                    console.log('Erreur connexion', error);
+                    this.message = "Erreur d'authentification";
+                })
+            },
+            onDcnx(){
+                // Se déconnecter
+                signOut(getAuth())
+                .then(response =>{
+                    this.user = getAuth().currentUser;
+                    this.user = {
+                        email:null,
+                        password:null
+                    };
+                    console.log("user deconnecté ", this.user);        
+                    this.message = 'user non connecté';
+                })
+                .catch(error=>{
+                    console.log('erreur deconnexion ', error);
+                })
+
+            },
+        }
+    }
+
 </script>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
