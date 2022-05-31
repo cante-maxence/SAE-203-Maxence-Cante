@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(400px,1fr))] text-white">
-    <cardExtract name="Artic Monkeys" date="Vendredi" photo="/images/icons/artic.png" />
+    <cardExtract name="Artic Monkeys" date="Vendredi" photo="../images/icons/artic.png" />
 
     <cardExtract name="The OffSpring" date="Vendredi" photo="../images/icons/offspring.png" />
 

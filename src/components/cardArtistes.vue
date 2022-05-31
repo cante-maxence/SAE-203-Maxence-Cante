@@ -17,10 +17,7 @@
 
               <div class="flex-1 pt-2">
                 <div class="relative h-full w-full">
-                  <img
-                    src="../images/icons/plus.png"
-                    class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-bottom"
-                  />
+                  <img src="/images/icons/plus.png" class="absolute top-0 h-full w-full rounded-lg bg-white object-cover object-bottom" />
                 </div>
               </div>
             </div>
