@@ -1,6 +1,6 @@
 
   <template>
-  <p class="my-10 flex justify-center font-bree-serif text-3xl text-white">Bienvenue sur la page artistes !</p>
+  <p class="my-10 mx-10 flex justify-center font-bree-serif text-3xl text-white">Bienvenue sur la page artistes !</p>
 
   <cardArtistes
     name="ACDC"

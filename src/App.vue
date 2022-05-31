@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen overflow-x-hidden bg-black">
     <header class="rounded-b-[100px] bg-purple-900">
       <nav role="navigation">
         <div id="menuToggle">
@@ -386,6 +386,8 @@ body {
 
 #menuToggle {
   display: block;
+  width: 10px;
+  height: 10px;
   position: relative;
   top: 50px;
   left: 50px;
