@@ -12,6 +12,7 @@
 
     <cardExtract name="Courtney Cox" date="Dimanche" photo="../images/icons/courtney.png" />
   </div>
+
   <button class="m-auto mb-16 flex rounded-lg bg-white">
     <div class="relative flex flex-col items-center justify-center gap-2.5 rounded-lg bg-white px-[27px] py-[31px]">
       <svg

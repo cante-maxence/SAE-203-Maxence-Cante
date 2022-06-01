@@ -8,6 +8,7 @@ import Concert from '../views/Concert.vue'
 import MLegal from '../views/MLegal.vue'
 import page404 from '../views/page404.vue'
 import GDS from '../views/GDS.vue'
+import ListeArtistes from '../views/ListeArtistes.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,7 @@ const router = createRouter({
     { path: '/GDS', name: 'GDS', component: GDS },
     { path: '/MLegal', name: 'MLegal', component: MLegal },
     { path: '/:pathMatch(.*)*', name: 'page404', component: page404 },
+    { path: '/ListeArtistes', name: 'ListeArtistes', component: ListeArtistes },
   ]
 })
 

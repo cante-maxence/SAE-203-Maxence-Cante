@@ -14,96 +14,89 @@
     </form>
   </div>
 
-  <h1 class="flex justify-center pt-6 text-center font-bree-serif text-4xl text-neutral-100">TEST Firebase Page 300</h1>
-
-  <h5>Firebase - Se connecter</h5>
-  <form @submit.prevent="onCnx()">
+  <h1 class="flex justify-center pt-6 text-center font-bree-serif text-4xl text-neutral-100">Connectez-vous</h1>
+  <form id="form" class="pb-10 text-white" @submit.prevent="onCnx()">
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button class="btn btn-dark">Email :</button>
-      </div>
-      <input class="form-control" type="text" v-model="user.email" required />
+      <input class="form-control" placeholder="Email" type="text" v-model="user.email" required />
     </div>
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <button class="btn btn-dark">Mot de passe :</button>
-      </div>
-      <input class="form-control" type="password" v-model="user.password" required />
+      <input class="form-control -mt-3" placeholder="Mot de passe" type="password" v-model="user.password" required />
     </div>
     <div class="alert alert-warning mb-3 text-center" v-if="message != null">
       {{ message }}
     </div>
+
     <div>
-      <button class="float-left" @click="onDcnx()">Deconnexion</button>
-      <button variant="dark" class="float-right" type="submit">Connexion</button>
+      <button class="float-left text-white" @click="onDcnx()">Deconnexion</button>
+      <button variant="dark" class="float-right text-white" type="submit">Connexion</button>
     </div>
   </form>
 </template>
 
 <script>
-
 // Bibliothèques Firebase  : import des fonctions
 //  signInWithEmailAndPassword : Authentification avec email et mot de passe
 //  getAuth : Fonction générale d'authentification
 //  signOut : Se deconnecter
 //  onAuthStateChanged : connaitre le statut de l'utilisateur (connecté ou non)
 
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js'
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
 
 // Bibliothèque Firestore : import des fonctions
 
+export default {
+  data() {
+    // Données de la vue
+    return {
+      user: {
+        // user se connectant
+        email: null,
+        password: null,
+      },
+      message: null, // Message de connexion
+    };
+  },
+  mounted() {},
 
-    export default {   
-        data(){ // Données de la vue
-            return{                
-                user:{          // user se connectant
-                    email:null,
-                    password:null
-                },
-                message:null, // Message de connexion
-                 }
-        },
-
-        mounted(){ 
-          
-        }
-
-        methods:{
-            onCnx(){                
-                // Se connecter avec user et mot de passe           
-                signInWithEmailAndPassword(getAuth(), this.user.email, this.user.password)
-                .then((response)=>{
-                    // Connexion OK
-                    console.log('user connecté', response.user);
-                    this.user = response.user;
-                    this.message = "User connecté : "+this.user.email;
-                })
-                .catch((error) =>{
-                    // Erreur de connexion
-                    console.log('Erreur connexion', error);
-                    this.message = "Erreur d'authentification";
-                })
-            },
-            onDcnx(){
-                // Se déconnecter
-                signOut(getAuth())
-                .then(response =>{
-                    this.user = getAuth().currentUser;
-                    this.user = {
-                        email:null,
-                        password:null
-                    };
-                    console.log("user deconnecté ", this.user);        
-                    this.message = 'user non connecté';
-                })
-                .catch(error=>{
-                    console.log('erreur deconnexion ', error);
-                })
-
-            },
-        }
-    }
-
+  methods: {
+    onCnx() {
+      // Se connecter avec user et mot de passe
+      signInWithEmailAndPassword(getAuth(), this.user.email, this.user.password)
+        .then((response) => {
+          // Connexion OK
+          console.log("L'utilisateur est connecté", response.user);
+          this.user = response.user;
+          this.message = "L'utilisateur est connecté : " + this.user.email;
+        })
+        .catch((error) => {
+          // Erreur de connexion
+          console.log("Erreur connexion", error);
+          this.message = "Erreur d'authentification";
+        });
+    },
+    onDcnx() {
+      // Se déconnecter
+      signOut(getAuth())
+        .then((response) => {
+          this.user = getAuth().currentUser;
+          this.user = {
+            email: null,
+            password: null,
+          };
+          console.log("user deconnecté ", this.user);
+          this.message = "L'utilisateur n'est pas connecté";
+        })
+        .catch((error) => {
+          console.log("erreur deconnexion ", error);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -144,7 +137,7 @@ textarea::focus:placeholder {
 
 input::-ms-placeholder,
 textarea::-ms-placeholder {
-  color: #aca49c;
+  color: #ffffff;
   font-size: 0.875em;
 }
 
@@ -153,11 +146,15 @@ textarea:focus::-ms-placeholder {
   color: #ffe1fa;
 }
 
+input:hover {
+  color: black;
+}
+
 /* on hover placeholder */
 
 input:hover::-webkit-input-placeholder,
 textarea:hover::-webkit-input-placeholder {
-  color: #e2dedb;
+  color: #000000;
   font-size: 0.875em;
 }
 
@@ -168,7 +165,7 @@ textarea:hover:focus::-webkit-input-placeholder {
 
 input:hover::-moz-placeholder,
 textarea:hover::-moz-placeholder {
-  color: #e2dedb;
+  color: #000000;
   font-size: 0.875em;
 }
 
@@ -179,7 +176,7 @@ textarea:hover:focus::-moz-placeholder {
 
 input:hover::placeholder,
 textarea:hover::placeholder {
-  color: #e2dedb;
+  color: #000000;
   font-size: 0.875em;
 }
 
@@ -231,7 +228,6 @@ input {
   color: #ffe1fa;
 
   border: solid 4px #ffe1fa;
-  border-bottom: none;
 
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -241,7 +237,7 @@ input {
 
 input:hover {
   background: #ffe1fa;
-  color: #e2dedb;
+  color: #000000;
 }
 
 textarea {
@@ -267,7 +263,7 @@ textarea {
 
 textarea:hover {
   background: #ffe1fa;
-  color: #e2dedb;
+  color: #000000;
 }
 
 #submit {
@@ -288,6 +284,6 @@ textarea:hover {
 }
 
 #submit:hover {
-  color: #e2dedb;
+  color: #000000;
 }
 </style>
