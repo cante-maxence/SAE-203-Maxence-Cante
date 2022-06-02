@@ -1,60 +1,127 @@
 <template>
-  <div class>
-    <h5 class="text-center font-bree-serif text-4xl text-white">Liste des Artistes - Simple liste</h5>
+  <div>
+    <h1 class="my-4 text-center text-3xl text-white">Liste Artistes Synchro</h1>
+    <form class="">
+      <div>
+        <input type="text" placeholder="Nom de l'artiste" class="mx-5 mt-2 border-2 p-3" v-model="nom" required />
+        <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" @click="createArtistes()" title="Création">Créer</button>
+      </div>
+    </form>
+    <input type="text" v-model="filter" class="mx-5 mt-2 border-2 p-3 text-white" placeholder="Filtre" />
+    <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" title="Filtrage">filtrage</button>
+    <form v-for="artistes in filterByName" :key="artistes.id">
+      <div>
+        <input type="text" v-model="artistes.nom" required class="2 mx-5 mt-2 border-2 p-3" />
+        <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" @click="updateArtistes(artistes)" title="Modification">
+          Modify
+        </button>
+        <button class="mx-5 border-2 p-3 text-white" type="button" @click="deleteArtistes(artistes)" title="Suppression">Delete</button>
+      </div>
+    </form>
   </div>
-  <div class="my-5 text-center font-bree-serif text-2xl text-white" v-for="Artistes in listeArtistes" :key="Artistes.id">
-    <p>{{ Artistes.Nom }}</p>
-    <img class="" src="image" />
-  </div>
-  <hr />
 </template>
 
-
-
 <script>
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  onSnapshot,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
 export default {
   data() {
     return {
-      Nom: null,
-      image: null,
+      user: {
+        email: null,
+        password: null,
+      },
       message: null,
-      listeArtistes: [],
+      nom: null,
+      listeArtistesSynchro: [],
+      filter: "",
     };
   },
-  mounted() {
-    this.getArtistes();
-  },
-  methods: {
-    async getArtistes() {
-      const firestore = getFirestore();
-      const dbArtistes = collection(firestore, "Artistes");
-      const query = await getDocs(dbArtistes);
-      query.forEach((doc) => {
-        let Artistes = {
-          id: doc.id,
-          Nom: doc.data().Nom,
-          image: doc.data().image,
-        };
-        this.listeArtistes.push(Artistes);
+  computed: {
+    orderByName: function () {
+      return this.listeArtistesSynchro.sort(function (a, b) {
+        if (a.nom < b.nom) return -1;
+        if (a.nom > b.nom) return 1;
+        return 0;
       });
+    },
+    filterByName: function () {
+      if (this.filter.length > 0) {
+        let filter = this.filter.toLowerCase();
+        return this.orderByName.filter(function (artistes) {
+          return artistes.nom.toLowerCase().includes(filter);
+        });
+      } else {
+        return this.orderByName;
+      }
+    },
+  },
+
+  mounted() {
+    let user = getAuth().currentUser;
+    if (user) {
+      this.user = user;
+      this.message = "User déjà connecté : " + this.user.email;
+    } else {
+      this.message = "User non connecté : " + this.user.email;
+    }
+
+    this.getArtistesSynchro();
+  },
+
+  methods: {
+    async getArtistesSynchro() {
+      const firestore = getFirestore();
+      const dbArtistes = collection(firestore, "artistes");
+      const query = await onSnapshot(dbArtistes, (snapshot) => {
+        this.listeArtistesSynchro = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      });
+    },
+
+    async createArtistes() {
+      const firestore = getFirestore();
+      const dbArtistes = collection(firestore, "artistes");
+      const docRef = await addDoc(dbArtistes, {
+        nom: this.nom,
+      });
+      //console.log('document créé avec le id : ', docRef.id);
+    },
+
+    async updateArtistes(artistes) {
+      const firestore = getFirestore();
+      const docRef = doc(firestore, "artistes", artistes.id);
+      await updateDoc(docRef, {
+        nom: artistes.nom,
+      });
+    },
+
+    async deleteArtistes(artistes) {
+      const firestore = getFirestore();
+      const docRef = doc(firestore, "artistes", artistes.id);
+      await deleteDoc(docRef);
     },
   },
 };
 </script>
 
-<style scoped>
-.center {
-  text-align: center;
-}
-.title {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: #34495e;
-}
-h4 {
-  font-weight: bold;
+<style>
+body {
+  height: 100%;
 }
 </style>
