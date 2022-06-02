@@ -31,11 +31,11 @@
     photo1="../images/icons/threedays.png"
     photo2="../images/icons/troisdays.jpg"
     type1="Rock Indépendant"
-    type2="Solo"
-    type3="Femme"
-    music1="You Know my Name "
-    music2="Doll Parts "
-    music3="Violet"
+    type2="Métal"
+    type3="Groupe"
+    music1="I hate everything about you"
+    music2="So Called Life"
+    music3="Animal i have become"
   />
 
   <cardArtistes

@@ -1,12 +1,13 @@
 <template>
   <div class>
-    <h5 class="my-10 text-center font-bree-serif text-4xl text-white">Liste des artistes - Simple liste</h5>
+    <h5 class="text-center font-bree-serif text-4xl text-white">Liste des Artistes - Simple liste</h5>
   </div>
-  <div v-for="artistes in listeArtistes" :key="artistes.id">
-    <p>{{ artistes.nom }}</p>
+  <div class="my-10 text-center font-bree-serif text-2xl text-white" v-for="Artistes in listeArtistes" :key="Artistes.id">
+    <p>{{ Artistes.Nom }}</p>
   </div>
   <hr />
 </template>
+
 
 
 <script>
@@ -15,7 +16,7 @@ import { getFirestore, collection, getDocs } from "https://www.gstatic.com/fireb
 export default {
   data() {
     return {
-      nom: null,
+      Nom: null,
       message: null,
       listeArtistes: [],
     };
@@ -26,14 +27,14 @@ export default {
   methods: {
     async getArtistes() {
       const firestore = getFirestore();
-      const dbArtistes = collection(firestore, "artistes");
+      const dbArtistes = collection(firestore, "Artistes");
       const query = await getDocs(dbArtistes);
       query.forEach((doc) => {
-        let artistes = {
+        let Artistes = {
           id: doc.id,
-          nom: doc.data().nom,
+          Nom: doc.data().Nom,
         };
-        this.listeArtistes.push(artistes);
+        this.listeArtistes.push(Artistes);
       });
     },
   },
