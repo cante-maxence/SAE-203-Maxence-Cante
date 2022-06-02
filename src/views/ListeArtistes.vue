@@ -2,8 +2,9 @@
   <div class>
     <h5 class="text-center font-bree-serif text-4xl text-white">Liste des Artistes - Simple liste</h5>
   </div>
-  <div class="my-10 text-center font-bree-serif text-2xl text-white" v-for="Artistes in listeArtistes" :key="Artistes.id">
+  <div class="my-5 text-center font-bree-serif text-2xl text-white" v-for="Artistes in listeArtistes" :key="Artistes.id">
     <p>{{ Artistes.Nom }}</p>
+    <img class="" src="image" />
   </div>
   <hr />
 </template>
@@ -17,6 +18,7 @@ export default {
   data() {
     return {
       Nom: null,
+      image: null,
       message: null,
       listeArtistes: [],
     };
@@ -33,6 +35,7 @@ export default {
         let Artistes = {
           id: doc.id,
           Nom: doc.data().Nom,
+          image: doc.data().image,
         };
         this.listeArtistes.push(Artistes);
       });
