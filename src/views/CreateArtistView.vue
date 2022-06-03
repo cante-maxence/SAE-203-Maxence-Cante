@@ -8,9 +8,9 @@
 
     <input class="mx-10 mb-10 border-2" placeholder="Nom de la personne" v-model="artistes.nom" required />
     <div>
-      <span class="mx-10 font-bree-serif text-2xl text-white">Prénom</span>
+      <span class="mx-10 font-bree-serif text-2xl text-white">Type</span>
     </div>
-    <input class="mx-10 mb-10 border-2" v-model="artistes.prenom" placeholder="Prénom de la personne" key="required" />
+    <input class="mx-10 mb-10 border-2" v-model="artistes.type" placeholder="Type Groupe ou Solo" key="required" />
     <div>
       <div>
         <span class="mx-10 font-bree-serif text-2xl text-white">Photo</span>
@@ -28,7 +28,6 @@
       <input class="mx-10" type="date" v-model="artistes.naissance" format="dd/mm/yyyy" required />
     </div>
     <br />
-    <div></div>
 
     <div>
       <button class="m-10 border-4 border-pink-300 p-3 text-2xl text-white" type="submit">Créer</button>
@@ -70,7 +69,7 @@ export default {
       artistes: {
         // L'artiste à créer
         nom: null, // son nom
-        prenom: null, // son prénom
+        type: null, // son prénom
         image: null, // sa photo (nom du fichier)
         naissance: null, // sa date de naissance
       },

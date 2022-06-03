@@ -1,21 +1,16 @@
 <template>
-  <div>
+  <div class="m-auto mb-20 grid w-96">
     <h1 class="my-4 text-center text-3xl text-white">Liste Artistes Synchro</h1>
-    <form class="">
-      <div>
-        <input type="text" placeholder="Nom de l'artiste" class="mx-5 mt-2 border-2 p-3" v-model="nom" required />
-        <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" @click="createArtistes()" title="Création">Créer</button>
-      </div>
-    </form>
-    <input type="text" v-model="filter" class="mx-5 mt-2 border-2 p-3 text-white" placeholder="Filtre" />
+    <form class="mb-10"></form>
+    <input type="text" v-model="filter" class="mx-5 mt-2 border-2 p-3 text-black" placeholder="Filtre" />
     <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" title="Filtrage">filtrage</button>
-    <form v-for="artistes in filterByName" :key="artistes.id">
+    <form class="w-full" v-for="artistes in filterByName" :key="artistes.id">
       <div>
-        <input type="text" v-model="artistes.nom" required class="2 mx-5 mt-2 border-2 p-3" />
+        <input type="text" v-model="artistes.nom" required class="mx-5 mt-2 w-full border-2 p-3" />
         <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" @click="updateArtistes(artistes)" title="Modification">
-          Modify
+          Modifier
         </button>
-        <button class="mx-5 border-2 p-3 text-white" type="button" @click="deleteArtistes(artistes)" title="Suppression">Delete</button>
+        <button class="mx-5 border-2 p-3 text-white" type="button" @click="deleteArtistes(artistes)" title="Suppression">Supprimer</button>
       </div>
     </form>
   </div>
@@ -120,8 +115,3 @@ export default {
 };
 </script>
 
-<style>
-body {
-  height: 100%;
-}
-</style>
