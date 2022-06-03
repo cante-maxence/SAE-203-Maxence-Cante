@@ -1,7 +1,7 @@
 <template>
   <div class="m-auto mb-20 grid w-96">
     <h1 class="my-4 text-center text-3xl text-white">Liste participant Synchro</h1>
-    <input placeholder="Nom du participant" type="text" v-model="Nom" required class="p-1" />
+
     <button class="mx-2 mt-2 items-center border-2 p-3 text-white" type="button" @click="createparticipant()" title="Créé">Créé</button>
     <input type="text" v-model="filter" class="mx-5 mt-2 border-2 p-3 text-black" placeholder="Filtre" />
     <button class="mx-5 mt-2 border-2 p-3 text-white" type="button" title="Filtrage">filtrage</button>
