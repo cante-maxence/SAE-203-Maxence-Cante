@@ -9,6 +9,7 @@ import MLegal from '../views/MLegal.vue'
 import page404 from '../views/page404.vue'
 import GDS from '../views/GDS.vue'
 import ListeArtistes from '../views/ListeArtistes.vue'
+import ListeParticipant from '../views/ListeParticipant.vue'
 import CreateArtistView from '../views/CreateArtistView.vue'
 
 const router = createRouter({
@@ -23,6 +24,7 @@ const router = createRouter({
     { path: '/GDS', name: 'GDS', component: GDS },
     { path: '/MLegal', name: 'MLegal', component: MLegal },
     { path: '/:pathMatch(.*)*', name: 'page404', component: page404 },
+    { path: '/ListeParticipant', name: 'ListeParticipant', component: ListeParticipant },
     { path: '/CreateArtistView', name: 'CreateArtistView', component: CreateArtistView },
     { path: '/ListeArtistes', name: 'ListeArtistes', component: ListeArtistes },
   ]

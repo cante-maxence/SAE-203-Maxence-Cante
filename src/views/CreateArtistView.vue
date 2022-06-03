@@ -138,7 +138,7 @@ export default {
         const docRef = addDoc(collection(db, "artistes"), this.artistes);
       });
       // redirection sur la liste des Artistes
-      this.$router.push("/liste");
+      this.$router.push("/Accueil");
     },
   },
 };

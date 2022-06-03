@@ -285,7 +285,7 @@
         <RouterLink to="/contact" class="text-black hover:text-slate-700">
           <p class="mx-10 flex justify-center font-bree-serif text-xl text-pink-300">
             Nous <br />
-            contactez
+            contacter
           </p>
         </RouterLink>
 
